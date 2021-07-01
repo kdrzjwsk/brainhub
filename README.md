@@ -1,20 +1,26 @@
 # brainhub
+A simple app created with React connected with an API written in Node.js
 
-##Frontend
+## Frontend
 
 Install the dependencies using:
-npm install
+### npm install
 
 Run the app using:
-npm start
+### npm start
 
 Run the tests using:
-npm test
+### npm test
 
-##Backend
+## Backend
 
 Install the dependencies using:
-npm install
+### npm install
 
 Run the server using:
-nodemon server.js
+### npm start 
+or
+### nodemon server.js
+
+Run the tests using:
+### npm test
