@@ -13,7 +13,11 @@ const Notification = ({ success, error, loading, event }) => {
     return (
         <div className="notificationWrapper">
             {loading && <p>Sending data...</p>}
-            {success && <Alert data-testid="success-alert" className={classes.alert} severity="success">A new event {event.id} on <strong>{event.date}</strong> was created successfully by <strong>{event.email}</strong>!</Alert>}
+            {success &&
+                <Alert data-testid="success-alert" className={classes.alert} severity="success">
+                    A new event {event.id} on <strong>{event.date}</strong> was created successfully by <strong>{event.email}</strong>!
+                </Alert>
+            }
             {error && <Alert className={classes.alert} severity="error">{error}</Alert>}
         </div>
     )

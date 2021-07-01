@@ -78,18 +78,14 @@ const EventForm = ({ handleAddEvent }) => {
                 value={formik.values.date}
                 onChange={formik.handleChange}
                 error={formik.touched.date && Boolean(formik.errors.date)}
-                helperText={formik.touched.date && formik.errors.date}
-            />
+                helperText={formik.touched.date && formik.errors.date} />
             <Button
                 fullWidth
                 className={classes.inputField}
                 variant="contained"
                 color="primary"
                 endIcon={<InsertInvitationIcon />}
-                type="submit"
-            >
-                Save
-            </Button>
+                type="submit">Save</Button>
         </form>
     )
 }
