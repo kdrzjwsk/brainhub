@@ -1,4 +1,4 @@
-# brainhub
+# event-form
 A simple app created with React connected with an API written in Node.js
 
 ## Frontend
