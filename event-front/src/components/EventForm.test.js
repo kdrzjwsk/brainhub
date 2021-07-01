@@ -40,3 +40,28 @@ test("does not submit an empty form", async () => {
         expect(handleSubmit).toHaveBeenCalledTimes(0);
     });
 })
+
+test("does not submit a form with an invalid email field", async () => {
+    const handleSubmit = jest.fn()
+    render(<EventForm handleAddEvent={handleSubmit} />);
+    userEvent.type(screen.getByLabelText("First Name"), "Jane");
+    userEvent.type(screen.getByLabelText("Last Name"), "Doe");
+    userEvent.type(screen.getByLabelText("Email"), "jane.mail.com");
+    fireEvent.change(screen.getByLabelText("Event Date"), { target: { value: "2021-06-30" } });
+    fireEvent.submit(screen.getByTestId("event-form"));
+    await waitFor(() => {
+        expect(handleSubmit).toHaveBeenCalledTimes(0);
+    });
+})
+
+test("does not submit a form with an empty date field", async () => {
+    const handleSubmit = jest.fn()
+    render(<EventForm handleAddEvent={handleSubmit} />);
+    userEvent.type(screen.getByLabelText("First Name"), "Jane");
+    userEvent.type(screen.getByLabelText("Last Name"), "Doe");
+    userEvent.type(screen.getByLabelText("Email"), "jane.doe@mail.com");
+    fireEvent.submit(screen.getByTestId("event-form"));
+    await waitFor(() => {
+        expect(handleSubmit).toHaveBeenCalledTimes(0);
+    });
+})

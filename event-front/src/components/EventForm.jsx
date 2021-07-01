@@ -80,7 +80,16 @@ const EventForm = ({ handleAddEvent }) => {
                 error={formik.touched.date && Boolean(formik.errors.date)}
                 helperText={formik.touched.date && formik.errors.date}
             />
-            <Button fullWidth className={classes.inputField} variant="contained" color="primary" endIcon={<InsertInvitationIcon />} type="submit">Save</Button>
+            <Button
+                fullWidth
+                className={classes.inputField}
+                variant="contained"
+                color="primary"
+                endIcon={<InsertInvitationIcon />}
+                type="submit"
+            >
+                Save
+            </Button>
         </form>
     )
 }
